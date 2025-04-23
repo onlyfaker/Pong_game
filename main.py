@@ -13,14 +13,17 @@ screen = Screen()
 screen.setup(width=800,height=600)
 screen.bgcolor("black")
 screen.title('Pong Game')
+screen.tracer(0)
+
 
 paddle_left = Turtle()
+
 paddle_left.penup()
 paddle_left.goto(350,y=0)
 paddle_left.color("white")
 paddle_left.shape("square")
 paddle_left.shapesize(stretch_len=1,stretch_wid=5)
-
+screen.update()
 screen.listen()
 
 def move_up():
@@ -34,6 +37,10 @@ screen.onkeypress(move_up,"Up")
 screen.onkeypress(move_down,"Down")
 
 
+
+game_on = True
+while game_on:
+    screen.update()
 
 
 screen.exitonclick()
