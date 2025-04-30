@@ -6,6 +6,7 @@
 # todo - 6. detect collision with paddle
 # todo - 7. detect when paddle misses
 # todo - 8. keep score
+import time
 from turtle import Screen, Turtle
 
 from ball import Ball
@@ -33,8 +34,14 @@ screen.onkeypress(left_paddle.move_down, "s")
 
 game_on = True
 while game_on:
+    time.sleep(0.1)
+    screen.update()
     ball.move()
     screen.update()
+
+    if ball.ycor()>300 or ball.ycor()<-300:
+        pass
+        #bounce
 
 
 screen.exitonclick()
