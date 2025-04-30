@@ -1,8 +1,8 @@
 # todo/done - 1. create screen
 # todo/done - 2. create and move paddle
 # todo/done - 3. create another paddle
-# todo - 4. crete ball and make it move
-# todo - 5. detect collision with wall and bounce
+# todo/done - 4. crete ball and make it move
+# todo/done - 5. detect collision with wall and bounce
 # todo - 6. detect collision with paddle
 # todo - 7. detect when paddle misses
 # todo - 8. keep score
@@ -39,9 +39,10 @@ while game_on:
     ball.move()
     screen.update()
 
-    if ball.ycor()>300 or ball.ycor()<-300:
-        pass
-        #bounce
+    if ball.ycor()>280 or ball.ycor()<-280:
+        ball.bounce()
+    screen.update()
+
 
 
 screen.exitonclick()
