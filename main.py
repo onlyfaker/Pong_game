@@ -8,6 +8,7 @@
 # todo - 8. keep score
 from turtle import Screen, Turtle
 
+from ball import Ball
 from paddle import Paddle
 
 
@@ -16,11 +17,12 @@ screen.setup(width=800,height=600)
 screen.bgcolor("black")
 screen.title('Pong Game')
 screen.tracer(0)
-screen.update()
 screen.listen()
+screen.update()
 
 right_paddle = Paddle((350,0))
 left_paddle = Paddle((-350,0))
+ball = Ball()
 
 # TODO - at the end FIX the issue where there is a LAG before i can move with onkeypress!!!!
 screen.onkeypress(right_paddle.move_up, "Up")
@@ -31,7 +33,7 @@ screen.onkeypress(left_paddle.move_down, "s")
 
 game_on = True
 while game_on:
-
+    ball.move()
     screen.update()
 
 
