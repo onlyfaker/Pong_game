@@ -49,8 +49,8 @@ while game_on:
 # detect collision with right paddle and left paddle
     if ball.distance(right_paddle) <50 and ball.xcor()>320 or ball.distance(left_paddle) < 50 and ball.xcor()<-320:
         ball.bounce_x()
-    
-        ball_speed -=0.005
+        if ball_speed>0.005:
+            ball_speed -=0.005
     screen.update()
 
 # detect R paddle miss
@@ -68,5 +68,6 @@ while game_on:
         time.sleep(1)
         scoreboard.increase_score()
         ball.reset_position_ball()
+    screen.update()
 
 screen.exitonclick()
