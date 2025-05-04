@@ -11,7 +11,7 @@ from turtle import Screen, Turtle
 
 from ball import Ball
 from paddle import Paddle
-
+from scoreboard import Scoreboard
 
 screen = Screen()
 screen.setup(width=800,height=600)
@@ -24,6 +24,7 @@ screen.update()
 right_paddle = Paddle((350,0))
 left_paddle = Paddle((-350,0))
 ball = Ball()
+scoreboard= Scoreboard()
 
 # TODO - at the end FIX the issue where there is a LAG before i can move with onkeypress!!!!
 # TODO - not able to move both paddle at the same time
@@ -52,10 +53,12 @@ while game_on:
 
 # detect R paddle miss
     if ball.xcor()>380:
+        time.sleep(1)
         ball.reset_position_ball()
 
 # detect L paddle miss
     if ball.xcor()<-380:
+        time.sleep(1)
         ball.reset_position_ball()
 
 screen.exitonclick()
