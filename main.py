@@ -4,8 +4,8 @@
 # todo/done - 4. crete ball and make it move
 # todo/done - 5. detect collision with wall and bounce
 # todo/done - 6. detect collision with paddle
-# todo - 7. detect when paddle misses
-# todo - 8. keep score
+# todo/done - 7. detect when paddle misses
+# todo/done - 8. keep score
 import time
 from turtle import Screen, Turtle
 
