@@ -3,7 +3,7 @@
 # todo/done - 3. create another paddle
 # todo/done - 4. crete ball and make it move
 # todo/done - 5. detect collision with wall and bounce
-# todo - 6. detect collision with paddle
+# todo/done - 6. detect collision with paddle
 # todo - 7. detect when paddle misses
 # todo - 8. keep score
 import time
@@ -26,6 +26,7 @@ left_paddle = Paddle((-350,0))
 ball = Ball()
 
 # TODO - at the end FIX the issue where there is a LAG before i can move with onkeypress!!!!
+# TODO - not able to move both paddle at the same time
 screen.onkeypress(right_paddle.move_up, "Up")
 screen.onkeypress(right_paddle.move_down, "Down")
 screen.onkeypress(left_paddle.move_up, "w")
@@ -41,12 +42,11 @@ while game_on:
 
     #detect collision with wall
     if ball.ycor()>280 or ball.ycor()<-280:
-        ball.bounce()
+        ball.bounce_y()
     screen.update()
 
-    #detect collision with right paddle
-    if ball.distance(right_paddle) <50 and ball.xcor()>360:
-        pass
-        # another bounce method
+    #detect collision with right paddle and left paddle
+    if ball.distance(right_paddle) <50 and ball.xcor()>320 or ball.distance(left_paddle) < 50 and ball.xcor()<-320:
+        ball.bounce_x()
 
 screen.exitonclick()
