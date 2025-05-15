@@ -28,6 +28,8 @@ scoreboard= Scoreboard()
 
 # TODO - at the end FIX the issue where there is a LAG before i can move with onkeypress!!!!
 # TODO - not able to move both paddle at the same time
+# TODO - make the ball start moving when space is press
+    
 screen.onkeypress(right_paddle.move_up, "Up")
 screen.onkeypress(right_paddle.move_down, "Down")
 screen.onkeypress(left_paddle.move_up, "w")
